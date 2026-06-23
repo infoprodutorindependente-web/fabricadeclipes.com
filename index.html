@@ -6,7 +6,9 @@
 <title>Fábrica de Videoclipes</title>
 <meta name="description" content="Aprenda a criar clipes cinematográficos com Inteligência Artificial. Do roteiro ao clipe pronto, sem equipe, sem locação e sem câmera de cinema.">
 
-<!-- Preconnect para vídeos do YouTube -->
+<!-- Preconnect para o player da VSL (acelera o carregamento do vídeo principal) -->
+<link rel="preconnect" href="https://scripts.converteai.net" crossorigin>
+<link rel="preconnect" href="https://cdn.converteai.net" crossorigin>
 <link rel="preconnect" href="https://www.youtube.com">
 <link rel="preconnect" href="https://i.ytimg.com">
 
@@ -459,10 +461,7 @@
     <p class="sub-arrow">ENTENDA COMO FUNCIONA ⬇️</p>
 
     <div class="player-shell">
-      <button class="yt" data-id="CkBhktRIu5I" aria-label="Reproduzir vídeo principal">
-        <img src="https://i.ytimg.com/vi/CkBhktRIu5I/maxresdefault.jpg" alt="Vídeo principal" loading="eager" decoding="async" width="1280" height="720">
-        <span class="play" aria-hidden="true"></span>
-      </button>
+      <vturb-smartplayer id="vid-6965afb18990e4119b535f9c" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
     </div>
 
     <p class="lead">Você vai aprender a <span class="g">transformar suas ideias em cenas reais com IA.</span> Crie seus próprios roteiros, cenários, roupas, estética e direção visual, tudo sem sair de casa.</p>
@@ -830,6 +829,16 @@
   </section>
 
   <!-- ===================== SCRIPTS ===================== -->
+  <!-- Player da VSL (VTurb) carregado de forma assíncrona, sem travar a página -->
+  <script>
+    (function(){
+      var s=document.createElement("script");
+      s.src="https://scripts.converteai.net/7375af67-4bc4-4f1d-93cd-ff352cc57585/players/6965afb18990e4119b535f9c/v4/player.js";
+      s.async=true;
+      document.head.appendChild(s);
+    })();
+  </script>
+
   <!-- Vídeos do YouTube: só carregam o iframe quando o usuário clica -->
   <script>
     document.querySelectorAll('.yt').forEach(function(el){
